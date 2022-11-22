@@ -5,15 +5,15 @@ import Card from "../UI/Card";
 function Expenses(props) {
   let ExpenseItems = [];
 
-  for (let i = 0; i < props.items.length; i++) {
+  props.items.forEach((cur) =>
     ExpenseItems.push(
       <ExpenseItem
-        date={props.items[i].date}
-        title={props.items[i].title}
-        amount={props.items[i].amount}
+        date={cur.date}
+        title={cur.title}
+        amount={cur.amount}
       />
-    );
-  }
+    )
+  );
 
   return <Card className="expenses">{ExpenseItems}</Card>;
 }
