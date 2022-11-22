@@ -3,30 +3,19 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 
 function Expenses(props) {
-  return (
-    <Card className="expenses">
+  let ExpenseItems = [];
+
+  for (let i = 0; i < props.items.length; i++) {
+    ExpenseItems.push(
       <ExpenseItem
-        date={props.items[0].date}
-        title={props.items[0].title}
-        amount={props.items[0].amount}
+        date={props.items[i].date}
+        title={props.items[i].title}
+        amount={props.items[i].amount}
       />
-      <ExpenseItem
-        date={props.items[1].date}
-        title={props.items[1].title}
-        amount={props.items[1].amount}
-      />
-      <ExpenseItem
-        date={props.items[2].date}
-        title={props.items[2].title}
-        amount={props.items[2].amount}
-      />
-      <ExpenseItem
-        date={props.items[3].date}
-        title={props.items[3].title}
-        amount={props.items[3].amount}
-      />
-    </Card>
-  );
+    );
+  }
+
+  return <Card className="expenses">{ExpenseItems}</Card>;
 }
 
 export default Expenses;
