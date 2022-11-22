@@ -1,5 +1,6 @@
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 
 function Expenses(props) {
@@ -15,7 +16,12 @@ function Expenses(props) {
     )
   );
 
-  return <Card className="expenses">{ExpenseItems}</Card>;
+  return (
+    <div>
+      <ExpensesFilter />
+      <Card className="expenses">{ExpenseItems}</Card>;
+    </div>
+  );
 }
 
 export default Expenses;
