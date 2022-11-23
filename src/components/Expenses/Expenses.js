@@ -26,10 +26,10 @@ function Expenses(props) {
   };
 
   return (
-    <div>
+    <Card className="expenses">
       <ExpensesFilter onUpdateYear={updateYearHandler} />
-      <Card className="expenses">{ExpenseItems}</Card>;
-    </div>
+      {ExpenseItems}
+    </Card>
   );
 }
 
