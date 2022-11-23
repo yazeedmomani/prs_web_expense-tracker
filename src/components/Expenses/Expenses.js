@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 
 function Expenses(props) {
   let ExpenseItems = [];
-  const [currentYear, setCurrentYear] = useState(2022);
+  const [currentYear, setCurrentYear] = useState(2021);
   const filteredPropsItems = props.items.filter(
     (cur) => cur.date.getFullYear() === currentYear
   );
@@ -27,7 +27,10 @@ function Expenses(props) {
 
   return (
     <Card className="expenses">
-      <ExpensesFilter onUpdateYear={updateYearHandler} />
+      <ExpensesFilter
+        selectedYear={currentYear}
+        onUpdateYear={updateYearHandler}
+      />
       {ExpenseItems}
     </Card>
   );
