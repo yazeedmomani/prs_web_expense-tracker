@@ -14,6 +14,7 @@ function Expenses(props) {
   filteredPropsItems.forEach((cur) =>
     ExpenseItems.push(
       <ExpenseItem
+        key={cur.id}
         date={cur.date}
         title={cur.title}
         amount={cur.amount}

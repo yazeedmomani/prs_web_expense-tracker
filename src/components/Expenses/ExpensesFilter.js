@@ -1,9 +1,7 @@
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  const clickHandler = (event) => {
-    if (event.target.id === "select") return;
-
+  const changeHandler = (event) => {
     props.onUpdateYear(Number(event.target.value));
   };
 
@@ -12,7 +10,7 @@ const ExpensesFilter = (props) => {
       <div className="expenses-filter__control">
         <label>Filter by year</label>
         <select
-          onClick={clickHandler}
+          onChange={changeHandler}
           id="select"
           value={props.selectedYear}>
           <option value="2022">2022</option>
